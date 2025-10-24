@@ -91,14 +91,14 @@ const Hero = () => {
           {/* Right Content - Profile Card */}
           <div className="animate-slide-in-right">
             <div className="bg-card rounded-2xl shadow-xl p-6 md:p-8 border border-border">
-              <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto mb-6">
-                <div className="absolute inset-0 bg-gradient-accent rounded-2xl animate-pulse"></div>
-                <img
-                  src={profilePhoto}
-                  alt="Nagendra Lankalapalli"
-                  className="relative w-full h-full object-cover rounded-2xl border-4 border-background shadow-lg"
-                />
-              </div>
+            <div className="relative w-48 h-48 md:w-56 md:h-56 mx-auto mb-6">
+              <div className="absolute inset-0 bg-gradient-accent rounded-2xl animate-pulse"></div>
+              <img
+                src={profilePhoto}
+                alt="Nagendra Lankalapalli - Java Developer"
+                className="relative w-full h-full object-contain rounded-2xl border-4 border-background shadow-lg bg-card p-2"
+              />
+            </div>
 
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-1">Nagendra Lankalapalli</h3>
