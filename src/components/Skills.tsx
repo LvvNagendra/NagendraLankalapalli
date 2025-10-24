@@ -1,20 +1,20 @@
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Languages",
-      skills: ["Java", "J2EE", "SQL", "HTML", "CSS"],
+      title: "Core Technologies",
+      skills: ["Java 17", "Spring Boot", "ActiveMQ", "Kafka", "Spring Security"],
     },
     {
-      title: "Frameworks",
-      skills: ["Spring Boot", "Spring Security", "Hibernate", "Spring Cloud"],
+      title: "Frameworks & Libraries",
+      skills: ["Spring MVC", "Spring Cloud", "Hibernate", "Spring Data JPA", "APRON Framework"],
     },
     {
       title: "Databases",
-      skills: ["MySQL", "PostgreSQL", "MongoDB", "Redis"],
+      skills: ["MySQL", "PostgreSQL", "Redis", "MongoDB"],
     },
     {
-      title: "Tools & Technologies",
-      skills: ["Maven", "Git", "Postman", "Swagger", "Docker", "Apache Kafka"],
+      title: "DevOps & Tools",
+      skills: ["Maven", "Git", "Jenkins", "Docker", "Swagger", "Postman"],
     },
   ];
 

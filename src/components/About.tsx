@@ -13,16 +13,17 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm a passionate Java Developer with 4+ years of experience in backend
-              development, specializing in Spring Boot, Spring Security, Microservices, and
-              FinTech applications. I have strong expertise in database management,
-              cloud-based architectures, and payment gateway integrations.
+              I'm an experienced Java Backend Developer with 3+ years of expertise in delivering 
+              enterprise-grade applications for the Banking and Financial Services (BFSI) domain. 
+              Currently working on the PSH product using Java 17, Spring Boot, Spring MVC, and ActiveMQ 
+              for messaging, serving major banking clients including ICICI, Barclays, and CBX.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My experience includes working with high-volume transaction processing systems,
-              implementing scalable microservices architectures, and optimizing system
-              performance. I'm passionate about clean code, security best practices, and
-              continuous learning.
+              I specialize in designing and developing secure, scalable, and real-time transaction 
+              systems using the APRON framework. My expertise includes building RESTful APIs, 
+              integrating messaging queues (ActiveMQ, Kafka), implementing microservices architecture, 
+              and ensuring robust performance for core banking platforms. Passionate about clean code, 
+              security best practices, and continuous improvement in Agile environments.
             </p>
 
             <Button
@@ -40,7 +41,7 @@ const About = () => {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-card p-6 rounded-2xl shadow-lg border border-border hover:shadow-xl transition-shadow duration-300">
-              <div className="text-4xl font-bold text-accent mb-2">4+</div>
+              <div className="text-4xl font-bold text-accent mb-2">3+</div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>
             <div className="bg-card p-6 rounded-2xl shadow-lg border border-border hover:shadow-xl transition-shadow duration-300">

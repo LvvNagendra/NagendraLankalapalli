@@ -1,38 +1,49 @@
-import { Users, TrendingUp, Cpu, Shield, Smartphone, Key } from "lucide-react";
+import { Users, TrendingUp, Cpu, Shield, Smartphone, Key, CreditCard, Building2, Lock, Zap } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "Nexus of Agri (NoA) SaaS Platform",
-      duration: "Oct 2024 – Present",
+      title: "PSH Core Banking Platform",
+      duration: "April 2022 – Present",
       description:
-        "Architected and developed a scalable SaaS platform for agricultural solutions, serving over 100,000 active users. Integrated AI-powered live translation and real-time messaging using WebSockets.",
-      technologies: ["React", "Spring Boot", "PostgreSQL", "Kafka", "AWS"],
+        "Enterprise-grade core banking solution serving major clients including ICICI, Barclays, and CBX. Built with Java 17, Spring Boot, and APRON framework for modular development and robust transaction processing.",
+      technologies: ["Java 17", "Spring Boot", "ActiveMQ", "MySQL", "APRON Framework"],
       highlights: [
-        { icon: Users, text: "100,000+ Active Users" },
-        { icon: TrendingUp, text: "35% Query Latency Reduction" },
+        { icon: Building2, text: "Major Banking Clients" },
+        { icon: Shield, text: "Secure Transaction Systems" },
       ],
     },
     {
-      title: "IIOTCONNX – Industrial IoT Platform",
-      duration: "Ongoing",
+      title: "Payment Gateway Integration System",
+      duration: "2023 – 2024",
       description:
-        "Developed an Industrial IoT platform leveraging microservices architecture for real-time industrial product showcasing. Integrated Apache Kafka for real-time event-driven messaging.",
-      technologies: ["Java 17", "Spring Boot", "Kafka", "Redis", "PostgreSQL"],
+        "Designed and implemented comprehensive payment gateway integrations for FinTech applications, supporting real-time transaction processing, secure authentication, and seamless payment flows for banking operations.",
+      technologies: ["Spring Boot", "Spring Security", "PostgreSQL", "Redis", "Swagger"],
       highlights: [
-        { icon: Cpu, text: "Real-time IoT Processing" },
-        { icon: Shield, text: "Spring Security Integration" },
+        { icon: CreditCard, text: "Multi-Gateway Support" },
+        { icon: Lock, text: "PCI-DSS Compliant" },
       ],
     },
     {
-      title: "OnePlatform – Enterprise Management System",
-      duration: "Ongoing",
+      title: "Real-time Messaging & Transaction System",
+      duration: "2022 – 2023",
       description:
-        "Led development of a multi-functional enterprise system incorporating company website, HRM portal, and internal management tools with SSO authentication using Keycloak.",
-      technologies: ["Spring Boot", "React", "Android", "Keycloak", "Docker"],
+        "Developed high-performance messaging infrastructure using ActiveMQ and Kafka for asynchronous communication in banking microservices. Enabled decoupled service architecture with reliable message delivery.",
+      technologies: ["ActiveMQ", "Kafka", "Spring Boot", "Docker", "Jenkins"],
       highlights: [
-        { icon: Smartphone, text: "Android App Development" },
-        { icon: Key, text: "SSO Integration" },
+        { icon: Zap, text: "Real-time Processing" },
+        { icon: Cpu, text: "Event-Driven Architecture" },
+      ],
+    },
+    {
+      title: "Intellect Design FinTech Solutions",
+      duration: "2022 – Present",
+      description:
+        "Contributing to enterprise FinTech solutions with focus on scalable microservices, RESTful API development, and database optimization. Implementing CI/CD pipelines and maintaining 99.9% system uptime.",
+      technologies: ["Java", "Spring Cloud", "Maven", "Git", "Docker"],
+      highlights: [
+        { icon: TrendingUp, text: "99.9% System Uptime" },
+        { icon: Shield, text: "Spring Security & OAuth2" },
       ],
     },
   ];

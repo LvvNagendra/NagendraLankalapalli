@@ -3,13 +3,18 @@ import { Briefcase, Calendar } from "lucide-react";
 const Experience = () => {
   const experiences = [
     {
-      title: "Java Developer",
-      company: "Intellect Design Arena",
-      duration: "April 2025 – Present",
+      title: "Java Backend Developer",
+      company: "Intellect Design Arena (PSH Product)",
+      duration: "April 2022 – Present",
       responsibilities: [
-        "Developing and maintaining high-volume transaction processing systems for major banking clients",
-        "Building scalable and resilient financial services using Spring Boot and microservices architecture",
-        "Collaborating with cross-functional teams in Agile environment for core banking platform features",
+        "Developing and maintaining backend services for PSH core banking platform serving clients like ICICI, Barclays, and CBX",
+        "Building secure, scalable real-time transaction systems using Java 17, Spring Boot, Spring MVC, and APRON framework",
+        "Integrating ActiveMQ for asynchronous messaging and decoupled service communication in microservices architecture",
+        "Leveraging Spring Data JPA and Spring Security for API development and secure authentication/authorization",
+        "Writing efficient database queries using MySQL/PostgreSQL ensuring data consistency in banking transactions",
+        "Developing RESTful APIs following OpenAPI/Swagger specifications for seamless front-end integration",
+        "Collaborating with cross-functional teams (QA, DevOps, Product) in Agile methodology to deliver new features",
+        "Using Git, Maven, Jenkins, and Docker for version control and CI/CD pipeline automation",
       ],
     },
     {

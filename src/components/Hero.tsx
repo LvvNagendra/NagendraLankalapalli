@@ -32,20 +32,20 @@ const Hero = () => {
                 <span className="text-foreground">Lankalapalli</span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground font-medium">
-                Java Developer
+                Java Backend Developer | BFSI Specialist
               </p>
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Experienced Backend Developer with 4+ years of expertise in Spring Boot,
-              Microservices Architecture, and FinTech applications. Specialized in building
-              scalable, secure, and high-performance enterprise systems.
+              Experienced Java Backend Developer with 3+ years specializing in Banking and Financial Services (BFSI) domain. 
+              Expert in building enterprise-grade applications using Java 17, Spring Boot, and ActiveMQ. 
+              Currently delivering core banking solutions for clients including ICICI, Barclays, and CBX.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 py-6">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-accent">4+</div>
+                <div className="text-3xl md:text-4xl font-bold text-accent">3+</div>
                 <div className="text-sm text-muted-foreground mt-1">
                   Years Experience
                 </div>
@@ -102,7 +102,7 @@ const Hero = () => {
 
               <div className="text-center mb-6">
                 <h3 className="text-2xl font-bold mb-1">Nagendra Lankalapalli</h3>
-                <p className="text-muted-foreground">Java Developer</p>
+                <p className="text-muted-foreground">Java Backend Developer</p>
               </div>
 
               <div className="space-y-3 mb-6">
