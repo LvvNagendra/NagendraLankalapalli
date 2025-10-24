@@ -5,7 +5,7 @@ const Experience = () => {
     {
       title: "Java Backend Developer",
       company: "Intellect Design Arena (PSH Product)",
-      duration: "April 2022 – Present",
+      duration: "April 2025 – Present",
       responsibilities: [
         "Developing and maintaining backend services for PSH core banking platform serving clients like ICICI, Barclays, and CBX",
         "Building secure, scalable real-time transaction systems using Java 17, Spring Boot, Spring MVC, and APRON framework",
