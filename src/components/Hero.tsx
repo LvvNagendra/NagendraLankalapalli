@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
 
             <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Experienced Java Backend Developer with 3+ years specializing in Banking and Financial Services (BFSI) domain. 
+              Experienced Java Backend Developer with 4+ years specializing in Banking and Financial Services (BFSI) domain. 
               Expert in building enterprise-grade applications using Java 17, Spring Boot, and ActiveMQ. 
               Currently delivering core banking solutions for clients including ICICI, Barclays, and CBX.
             </p>
@@ -45,7 +45,7 @@ const Hero = () => {
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6 py-6">
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-accent">3+</div>
+                <div className="text-3xl md:text-4xl font-bold text-accent">4+</div>
                 <div className="text-sm text-muted-foreground mt-1">
                   Years Experience
                 </div>
