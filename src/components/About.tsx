@@ -13,7 +13,7 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm an experienced Java Backend Developer with 3+ years of expertise in delivering 
+              I'm an experienced Java Backend Developer with 3.8 years of expertise in delivering 
               enterprise-grade applications for the Banking and Financial Services (BFSI) domain. 
               Currently working on the PSH product using Java 17, Spring Boot, Spring MVC, and ActiveMQ 
               for messaging, serving major banking clients including ICICI, Barclays, and CBX.
