@@ -32,7 +32,7 @@ const About = () => {
               asChild
               className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
             >
-              <a href="/Nagendra_Lankalapalli_Resume.pdf" download>
+              <a href="/Nagendra Lankalapalli Java Developer .pdf" download>
                 <Download className="mr-2 h-5 w-5" />
                 Download My Resume
               </a>
@@ -41,7 +41,7 @@ const About = () => {
 
           <div className="grid grid-cols-2 gap-6">
             <div className="bg-card p-6 rounded-2xl shadow-lg border border-border hover:shadow-xl transition-shadow duration-300">
-              <div className="text-4xl font-bold text-accent mb-2">3+</div>
+              <div className="text-4xl font-bold text-accent mb-2">3.9</div>
               <div className="text-muted-foreground">Years Experience</div>
             </div>
             <div className="bg-card p-6 rounded-2xl shadow-lg border border-border hover:shadow-xl transition-shadow duration-300">
