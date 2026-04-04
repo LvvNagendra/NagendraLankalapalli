@@ -6,12 +6,23 @@ const Navigation = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [scrolled, setScrolled] = useState(false);
 
+  useEffect(() => {
+    if (!isOpen) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [isOpen]);
+
   const navItems = [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Skills", href: "#skills" },
+    { name: "Education", href: "#education" },
+    { name: "Services", href: "#freelance" },
     { name: "Contact", href: "#contact" },
   ];
 
@@ -41,7 +52,7 @@ const Navigation = () => {
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
     if (element) {
-      const offset = 80;
+      const offset = 96;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - offset;
 
@@ -55,14 +66,14 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-[env(safe-area-inset-top,0px)] ${
         scrolled
           ? "bg-background/95 backdrop-blur-md shadow-md"
           : "bg-background/80 backdrop-blur-sm"
       }`}
     >
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+        <div className="flex items-center justify-between min-h-[4rem] h-20">
           {/* Logo */}
           <a
             href="#home"
@@ -104,9 +115,12 @@ const Navigation = () => {
 
           {/* Mobile Menu Button */}
           <button
+            type="button"
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-            aria-label="Toggle menu"
+            className="md:hidden min-h-11 min-w-11 inline-flex items-center justify-center rounded-lg hover:bg-secondary transition-colors touch-manipulation"
+            aria-expanded={isOpen}
+            aria-controls="mobile-nav"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -114,8 +128,11 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden py-4 animate-fade-in">
-            <ul className="space-y-2">
+          <div
+            id="mobile-nav"
+            className="md:hidden pb-4 animate-fade-in border-t border-border/60 mt-2 max-h-[min(70vh,calc(100dvh-5.5rem))] overflow-y-auto overscroll-y-contain -mx-4 px-4 sm:mx-0 sm:px-0"
+          >
+            <ul className="space-y-1 pt-2">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <a
@@ -124,10 +141,10 @@ const Navigation = () => {
                       e.preventDefault();
                       scrollToSection(item.href);
                     }}
-                    className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                    className={`flex items-center min-h-11 px-4 py-3 rounded-lg text-base font-medium transition-colors touch-manipulation ${
                       activeSection === item.href.substring(1)
                         ? "bg-accent text-accent-foreground"
-                        : "text-muted-foreground hover:bg-secondary"
+                        : "text-muted-foreground hover:bg-secondary active:bg-secondary"
                     }`}
                   >
                     {item.name}

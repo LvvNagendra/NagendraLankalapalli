@@ -1,102 +1,86 @@
-import {
-  TrendingUp,
-  Shield,
-  Cpu,
-  Building2,
-  Smartphone,
-  Key,
-  Zap,
-  Lock,
-} from "lucide-react";
+import { TrendingUp, Shield, Cpu, Smartphone, Key, Zap, CreditCard } from "lucide-react";
 
 const Projects = () => {
   const projects = [
     {
-      title: "PSH Core Banking Platform",
-      duration: "April 2025 – Present",
+      title: "Payment Service Hub (PSH) — CIBC",
+      duration: "Apr 2025 – Present",
+      role: "Product Engineer · Intellect Design Arena",
       description:
-        "Enterprise-grade core banking solution serving major clients including ICICI, Barclays, and CBX. Built with Java 17, Spring Boot, and APRON framework for modular development and robust transaction processing.",
+        "Enterprise BFSI payments stack: extending PSH for CIBC with bank-specific workflows, high-throughput transaction processing, and strict security and audit alignment. Real-time and async channels alongside PostgreSQL and internal frameworks (APRON).",
       technologies: [
         "Java 17",
         "Spring Boot",
+        "PostgreSQL",
+        "Kafka",
         "ActiveMQ",
-        "MySQL",
-        "APRON Framework",
+        "WebSockets",
+        "APRON",
+        "Angular",
       ],
       highlights: [
-        { icon: Building2, text: "Major Banking Clients" },
-        { icon: Shield, text: "Secure Transaction Systems" },
+        { icon: CreditCard, text: "Enterprise payment & transaction processing" },
+        { icon: Shield, text: "Regulated banking — security, audit, compliance" },
       ],
     },
-
     {
-      title: "Nexus of Agri (NoA) SaaS Platform",
-      duration: "Oct 2024 – Jan 2025",
+      title: "Nexus of Agri (NoA)",
+      duration: "SaaS platform · Beauto Systems",
+      role: "Backend & platform delivery",
       description:
-        "Architected and developed a scalable SaaS platform for agricultural solutions, serving over 100,000 active users. Integrated AI-powered live translation and real-time messaging using WebSockets.",
-      technologies: [
-        "React",
-        "Spring Boot",
-        "PostgreSQL",
-        "Kafka",
-        "AWS",
-      ],
+        "Scalable agricultural SaaS with React and Spring; Kafka and WebSockets; OAuth2 and AWS. Served 100K+ users with read replicas and payments-related flows; achieved ~35% query latency reduction.",
+      technologies: ["React", "Spring Boot", "PostgreSQL", "Kafka", "WebSockets", "OAuth2", "AWS"],
       highlights: [
-        { icon: TrendingUp, text: "100,000+ Active Users" },
-        { icon: Zap, text: "35% Query Latency Reduction" },
+        { icon: TrendingUp, text: "100K+ active users" },
+        { icon: Zap, text: "~35% query latency reduction" },
       ],
     },
-
     {
-      title: "IIOTCONNX – Industrial IoT Platform",
-      duration: "Ongoing",
+      title: "IIOTCONNX",
+      duration: "Industrial IoT · Beauto Systems",
+      role: "Microservices & integrations",
       description:
-        "Developed an Industrial IoT platform leveraging microservices architecture for real-time industrial product showcasing. Integrated Apache Kafka for event-driven messaging and efficient data flow.",
+        "Industrial IoT platform on Java 17 and Spring Cloud with Kafka, PostgreSQL, and Redis. Spring Security, Swagger 3, and Log4j2 for observable, integratable services.",
       technologies: [
         "Java 17",
-        "Spring Boot",
+        "Spring Cloud",
         "Kafka",
-        "Redis",
         "PostgreSQL",
+        "Redis",
+        "Spring Security",
+        "Swagger 3",
+        "Log4j2",
       ],
       highlights: [
-        { icon: Cpu, text: "Real-time IoT Processing" },
-        { icon: Shield, text: "Spring Security Integration" },
+        { icon: Cpu, text: "Event-driven, real-time IoT workloads" },
+        { icon: Shield, text: "Hardened APIs and service boundaries" },
       ],
     },
-
     {
-      title: "OnePlatform – Enterprise Management System",
-      duration: "Oct 2022 -Jan 2024",
+      title: "OnePlatform",
+      duration: "Enterprise suite · Beauto Systems",
+      role: "Full-stack & mobile contribution",
       description:
-        "Led the development of a multi-functional enterprise system incorporating company website, HRM portal, and internal management tools with SSO authentication using Keycloak.",
-      technologies: [
-        "Spring Boot",
-        "React",
-        "Android",
-        "Keycloak",
-        "Docker",
-      ],
+        "Multi-surface enterprise system: Spring Boot, React, Android, PostgreSQL, Keycloak SSO, Docker, and AWS—company site, HRM, and internal tooling with unified identity.",
+      technologies: ["Spring Boot", "React", "Android", "PostgreSQL", "Keycloak", "Docker", "AWS"],
       highlights: [
-        { icon: Smartphone, text: "Android App Development" },
-        { icon: Key, text: "SSO Integration with Keycloak" },
+        { icon: Smartphone, text: "Web + Android surfaces" },
+        { icon: Key, text: "SSO with Keycloak" },
       ],
     },
   ];
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured Projects
-          </h2>
+    <section id="projects" className="py-16 sm:py-20 md:py-32 bg-secondary/30 overflow-x-clip">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Selected work</h2>
           <p className="text-muted-foreground text-lg">
-            Some of my recent work
+            Flagship payments program and high-impact platforms from prior roles. Details may be summarized for confidentiality.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={index}
@@ -104,12 +88,9 @@ const Projects = () => {
             >
               <div className="p-6 md:p-8 flex-1 flex flex-col">
                 <div className="mb-4">
-                  <h3 className="text-xl md:text-2xl font-bold mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-accent font-medium">
-                    {project.duration}
-                  </p>
+                  <h3 className="text-xl md:text-2xl font-bold mb-2">{project.title}</h3>
+                  <p className="text-sm text-accent font-medium">{project.duration}</p>
+                  <p className="text-xs text-muted-foreground mt-1 uppercase tracking-wide">{project.role}</p>
                 </div>
 
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -123,9 +104,7 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <p className="text-muted-foreground mb-6 flex-1">
-                  {project.description}
-                </p>
+                <p className="text-muted-foreground mb-6 flex-1 text-sm leading-relaxed">{project.description}</p>
 
                 <div className="space-y-3">
                   {project.highlights.map((highlight, idx) => (
@@ -133,9 +112,7 @@ const Projects = () => {
                       <div className="w-8 h-8 bg-accent/10 rounded-lg flex items-center justify-center flex-shrink-0">
                         <highlight.icon className="text-accent" size={16} />
                       </div>
-                      <span className="text-sm text-muted-foreground">
-                        {highlight.text}
-                      </span>
+                      <span className="text-sm text-muted-foreground">{highlight.text}</span>
                     </div>
                   ))}
                 </div>

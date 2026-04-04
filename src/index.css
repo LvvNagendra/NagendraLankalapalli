@@ -111,7 +111,18 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    overflow-x: clip;
+    -webkit-text-size-adjust: 100%;
+  }
+
   body {
     @apply bg-background text-foreground;
+    overflow-x: clip;
+    min-height: 100dvh;
+  }
+
+  #root {
+    overflow-x: clip;
   }
 }
