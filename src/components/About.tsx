@@ -14,12 +14,19 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
           <div className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
+<<<<<<< HEAD
               I&apos;m a results-driven Java backend engineer with <strong className="text-foreground">4+ years</strong> in
               product-led and enterprise delivery across banking, BFSI, FinTech, and SaaS. Today I contribute to
               high-volume <strong className="text-foreground">payment and transaction processing</strong> on Intellect
               Design Arena&apos;s <strong className="text-foreground">Payment Service Hub (PSH)</strong> within{" "}
               <strong className="text-foreground">CIBC</strong>&apos;s program—aligning delivery with security, audit, and
               compliance expectations typical of regulated financial services.
+=======
+              I'm an experienced Java Backend Developer with 4+ years of expertise in delivering 
+              enterprise-grade applications for the Banking and Financial Services (BFSI) domain. 
+              Currently working on the PSH product using Java 17, Spring Boot, Spring MVC, and ActiveMQ 
+              for messaging, serving major banking clients including ICICI, Barclays, and CBX.
+>>>>>>> 6cd4ec5c5fb4a272b82c5b0da0bde6fc16c63988
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               My toolkit spans <strong className="text-foreground">Java 8–17</strong>, the Spring ecosystem (Boot, Security,

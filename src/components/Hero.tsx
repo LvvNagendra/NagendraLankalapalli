@@ -38,6 +38,7 @@ const Hero = () => {
               </p>
             </div>
 
+<<<<<<< HEAD
             <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl">
               Results-driven Java engineer with <strong className="text-foreground font-semibold">4+ years</strong> across
               product-led and enterprise delivery in BFSI, FinTech, and SaaS. Currently on Intellect&apos;s{" "}
@@ -56,6 +57,20 @@ const Hero = () => {
                 <div className="text-xs sm:text-sm text-muted-foreground mt-1 leading-snug">
                   API latency cut <span className="hidden sm:inline">(prior role)</span>
                   <span className="sm:hidden">(prior)</span>
+=======
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+              Experienced Java Backend Developer with 4+ years specializing in Banking and Financial Services (BFSI) domain. 
+              Expert in building enterprise-grade applications using Java 17, Spring Boot, and ActiveMQ. 
+              Currently delivering core banking solutions for clients including ICICI, Barclays, and CBX.
+            </p>
+
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-6 py-6">
+              <div>
+                <div className="text-3xl md:text-4xl font-bold text-accent">4+</div>
+                <div className="text-sm text-muted-foreground mt-1">
+                  Years Experience
+>>>>>>> 6cd4ec5c5fb4a272b82c5b0da0bde6fc16c63988
                 </div>
               </div>
               <div className="text-center sm:text-left rounded-xl border border-border/60 bg-card/30 px-4 py-3 sm:border-0 sm:bg-transparent sm:p-0">
