@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container mx-auto px-4 sm:px-6 max-w-full relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <LnsLogo />
+            <LnsLogo size="sm" />
             <p className="font-display font-semibold tracking-tight">Nagendra Lankalapalli</p>
             <p className="text-sm text-primary-foreground/70">
               © {currentYear} · {ROLE_TITLE}
