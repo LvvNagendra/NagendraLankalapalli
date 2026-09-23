@@ -21,12 +21,15 @@ Optional: you can also keep older copies under other names in `public/`, but the
 
 ## Deploy
 
-Push to `main` triggers `.github/workflows/deploy.yml`.
+Push to `main` deploys via `.github/workflows/deploy.yml` to the `gh-pages` branch.
 
-First-time setup (once in the GitHub repo):
+**First-time setup (required once):**
 
-1. **Settings → Pages**
-2. **Source:** GitHub Actions
+1. Open **Settings → Pages**: https://github.com/LvvNagendra/NagendraLankalapalli/settings/pages
+2. Under **Build and deployment → Source**, choose **Deploy from a branch**
+3. Branch: **`gh-pages`** / folder: **`/ (root)`** → Save
+
+Manual deploy from your machine: `npm run deploy`
 
 ## Stack
 
