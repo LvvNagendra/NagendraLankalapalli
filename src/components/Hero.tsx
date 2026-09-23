@@ -1,15 +1,17 @@
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Linkedin, Github, Download, ArrowDown } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github, ArrowDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import profilePhoto from "@/assets/profile-photo.jpg";
+import AnimatedResumeButton from "@/components/AnimatedResumeButton";
 import {
-  RESUME_HREF,
-  RESUME_DOWNLOAD_NAME,
+  PROFILE_HREF,
   LINKEDIN_HREF,
   GITHUB_HREF,
+  ORGMITRA_HREF,
   EMAIL,
   PHONE_DISPLAY,
   PHONE_HREF,
+  ROLE_TITLE,
+  ROLE_FOCUS,
 } from "@/lib/site";
 
 const Hero = () => {
@@ -21,7 +23,6 @@ const Hero = () => {
       <div className="absolute inset-0 bg-atmosphere -z-20" aria-hidden />
       <div className="absolute inset-0 bg-grid-fade -z-10 opacity-70" aria-hidden />
 
-      {/* Graphic orbs */}
       <motion.div
         aria-hidden
         className="pointer-events-none absolute -top-24 right-[8%] h-72 w-72 rounded-full bg-accent/20 blur-3xl -z-10"
@@ -34,14 +35,71 @@ const Hero = () => {
         animate={{ y: [0, -14, 0] }}
         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute top-1/3 right-[18%] h-40 w-40 rounded-full border border-accent/20 animate-spin-slow -z-10 hidden md:block"
-      />
 
-      <div className="container mx-auto px-4 sm:px-6 max-w-full py-10 sm:py-14 md:py-20">
-        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 lg:gap-16 items-center">
-          <div className="space-y-7 sm:space-y-8 min-w-0">
+      <div className="container mx-auto px-4 sm:px-6 max-w-full py-8 sm:py-12 md:py-16">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-center">
+          {/* Profile first on mobile so it always shows */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+            className="relative mx-auto w-full max-w-[280px] sm:max-w-sm lg:max-w-none order-1 lg:order-2"
+          >
+            <div className="relative aspect-square sm:aspect-[4/5] w-full max-h-[420px] mx-auto">
+              <div
+                aria-hidden
+                className="absolute -inset-3 rounded-[2rem] bg-gradient-accent opacity-35 blur-2xl animate-pulse-soft"
+              />
+              <div
+                aria-hidden
+                className="absolute -right-3 top-6 h-20 w-20 rounded-2xl border border-accent/30 bg-accent/5 backdrop-blur-sm animate-float hidden sm:block"
+              />
+
+              <img
+                src={PROFILE_HREF}
+                alt={`${ROLE_TITLE} — Nagendra Lankalapalli`}
+                width={640}
+                height={800}
+                decoding="async"
+                fetchPriority="high"
+                className="relative z-10 h-full w-full object-cover object-[center_15%] rounded-[1.75rem] shadow-xl ring-1 ring-border/60 bg-card"
+              />
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+                className="absolute z-20 bottom-3 left-3 right-3 sm:left-5 sm:right-5 flex items-center gap-3 rounded-2xl bg-background/92 backdrop-blur-md border border-border/80 px-3.5 py-2.5 shadow-lg"
+              >
+                <div className="min-w-0 flex-1">
+                  <p className="font-display font-semibold text-sm truncate">Product Engineer</p>
+                  <p className="text-xs text-muted-foreground truncate">Intellect · PSH @ CIBC</p>
+                </div>
+                <div className="flex gap-2 shrink-0">
+                  <a
+                    href={LINKEDIN_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-9 w-9 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-all"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin size={16} />
+                  </a>
+                  <a
+                    href={GITHUB_HREF}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-9 w-9 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-all"
+                    aria-label="GitHub"
+                  >
+                    <Github size={16} />
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </motion.div>
+
+          <div className="space-y-6 sm:space-y-7 min-w-0 order-2 lg:order-1">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -59,20 +117,33 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.08 }}
-              className="space-y-4"
+              className="space-y-3"
             >
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-[4.75rem] font-bold leading-[0.95] tracking-tight">
+              <p className="text-xs font-semibold tracking-[0.22em] uppercase text-muted-foreground">
+                LNS · Portfolio
+              </p>
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-bold leading-[0.98] tracking-tight">
                 <span className="block text-foreground">Nagendra</span>
                 <span className="block bg-gradient-accent bg-clip-text text-transparent">
                   Lankalapalli
                 </span>
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-medium font-display tracking-tight">
-                Java Backend Engineer
+              <p className="text-lg sm:text-xl md:text-2xl text-foreground/85 font-medium font-display tracking-tight">
+                {ROLE_TITLE}
               </p>
+              <p className="text-sm sm:text-base text-accent font-medium">{ROLE_FOCUS}</p>
               <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-xl text-pretty">
-                4+ years building payments and BFSI microservices—Spring Boot, Kafka, and
-                PostgreSQL on Intellect&apos;s Payment Service Hub for CIBC.
+                4+ years shipping Java + React products—enterprise payments at CIBC (PSH) and my own
+                multi-sector HRMS SaaS,{" "}
+                <a
+                  href={ORGMITRA_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent font-semibold underline-offset-4 hover:underline"
+                >
+                  OrgMitraHQ
+                </a>
+                .
               </p>
             </motion.div>
 
@@ -91,15 +162,16 @@ const Hero = () => {
               >
                 View selected work
               </Button>
+              <AnimatedResumeButton className="w-full sm:w-auto" />
               <Button
                 size="lg"
-                variant="outline"
+                variant="secondary"
                 asChild
-                className="w-full sm:w-auto border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300 touch-manipulation min-h-11"
+                className="w-full sm:w-auto min-h-11 touch-manipulation"
               >
-                <a href={RESUME_HREF} download={RESUME_DOWNLOAD_NAME}>
-                  <Download className="mr-2 h-5 w-5" />
-                  Download resume
+                <a href={ORGMITRA_HREF} target="_blank" rel="noopener noreferrer">
+                  OrgMitraHQ
+                  <ExternalLink className="ml-2 h-4 w-4" />
                 </a>
               </Button>
             </motion.div>
@@ -130,66 +202,6 @@ const Hero = () => {
               </span>
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 36 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="relative mx-auto w-full max-w-md lg:max-w-none"
-          >
-            <div className="relative aspect-[4/5] sm:aspect-[5/6] w-full max-h-[min(72vh,560px)] mx-auto">
-              <div
-                aria-hidden
-                className="absolute -inset-3 sm:-inset-4 rounded-[2rem] bg-gradient-accent opacity-30 blur-2xl animate-pulse-soft"
-              />
-              <div
-                aria-hidden
-                className="absolute -right-4 top-8 h-24 w-24 rounded-2xl border border-accent/30 bg-accent/5 backdrop-blur-sm animate-float hidden sm:block"
-              />
-              <div
-                aria-hidden
-                className="absolute -left-3 bottom-16 h-16 w-16 rounded-full border border-foreground/10 bg-background/60 backdrop-blur-sm animate-float hidden sm:block"
-                style={{ animationDelay: "1.2s" }}
-              />
-
-              <img
-                src={profilePhoto}
-                alt="Nagendra Lankalapalli — Java Backend Engineer"
-                className="relative z-10 h-full w-full object-cover object-top rounded-[1.75rem] shadow-xl ring-1 ring-border/60 bg-card"
-              />
-
-              <div className="absolute z-20 bottom-4 left-4 right-4 sm:left-6 sm:right-auto sm:bottom-6 flex items-center gap-3 rounded-2xl bg-background/90 backdrop-blur-md border border-border/80 px-4 py-3 shadow-lg">
-                <div className="min-w-0">
-                  <p className="font-display font-semibold text-sm sm:text-base truncate">
-                    Product Engineer
-                  </p>
-                  <p className="text-xs sm:text-sm text-muted-foreground truncate">
-                    Intellect · PSH @ CIBC
-                  </p>
-                </div>
-                <div className="ml-auto flex gap-2 shrink-0">
-                  <a
-                    href={LINKEDIN_HREF}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="h-9 w-9 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-all"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin size={16} />
-                  </a>
-                  <a
-                    href={GITHUB_HREF}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="h-9 w-9 rounded-lg bg-secondary hover:bg-accent hover:text-accent-foreground flex items-center justify-center transition-all"
-                    aria-label="GitHub"
-                  >
-                    <Github size={16} />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
 
         <motion.button
@@ -198,7 +210,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
           onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
-          className="mx-auto mt-12 sm:mt-16 flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+          className="mx-auto mt-10 sm:mt-14 flex items-center gap-2 text-sm text-muted-foreground hover:text-accent transition-colors"
           aria-label="Scroll to about"
         >
           <ArrowDown className="h-4 w-4 animate-bounce" />

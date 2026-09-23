@@ -5,10 +5,14 @@ import { staggerContainer, staggerItem } from "@/components/Reveal";
 const skillCategories = [
   {
     title: "Languages & core",
-    skills: ["Java (8–17)", "J2EE", "SQL", "OOP", "Design patterns"],
+    skills: ["Java (8–17)", "JavaScript / TypeScript", "SQL", "OOP", "Design patterns"],
   },
   {
-    title: "Frameworks",
+    title: "Frontend",
+    skills: ["React", "Vite", "HTML / CSS", "Tailwind CSS", "Responsive UI", "Component design"],
+  },
+  {
+    title: "Backend frameworks",
     skills: ["Spring Boot", "Spring MVC", "Spring Security", "Spring Cloud", "Hibernate/JPA"],
   },
   {
@@ -16,25 +20,19 @@ const skillCategories = [
     skills: ["Microservices", "REST", "Event-driven design", "WebSockets", "Apache Kafka", "ActiveMQ"],
   },
   {
-    title: "Data",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Query tuning", "Read replicas"],
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: ["AWS (EC2, RDS, S3)", "Docker", "CI/CD", "Maven", "Git", "GitHub", "Tomcat", "NGINX"],
+    title: "Data & cloud",
+    skills: ["PostgreSQL", "Redis", "MongoDB", "AWS (EC2, RDS, S3)", "Docker", "CI/CD"],
   },
   {
     title: "Security, APIs & practice",
     skills: [
       "OAuth2",
       "JWT",
-      "SSL/TLS",
       "Keycloak (SSO)",
       "Swagger/OpenAPI",
       "Payment gateways",
       "Agile/Scrum",
-      "SDLC",
-      "Log4j2",
+      "Git / GitHub",
     ],
   },
 ];
@@ -51,7 +49,7 @@ const Skills = () => {
         <SectionHeading
           eyebrow="Capabilities"
           title="Technical skills"
-          subtitle="Aligned with production work across payments, SaaS, and IoT backends."
+          subtitle="Full-stack toolkit—Java + React for payments, SaaS, and product builds."
         />
 
         <motion.div

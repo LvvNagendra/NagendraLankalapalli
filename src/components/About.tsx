@@ -1,9 +1,8 @@
-import { Download } from "lucide-react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Reveal, staggerContainer, staggerItem } from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
-import { RESUME_HREF, RESUME_DOWNLOAD_NAME } from "@/lib/site";
+import AnimatedResumeButton from "@/components/AnimatedResumeButton";
+import { ORGMITRA_HREF, ROLE_TITLE } from "@/lib/site";
 
 const highlights = [
   { value: "4+", label: "Years experience" },
@@ -24,46 +23,42 @@ const About = () => {
       <div className="container mx-auto px-4 sm:px-6 max-w-full">
         <SectionHeading
           eyebrow="About"
-          title="Backend engineer for regulated systems"
-          subtitle="Clear delivery, measurable outcomes, and documentation teams can trust."
+          title={`${ROLE_TITLE} for products that ship`}
+          subtitle="Enterprise payments by day. Own SaaS (OrgMitraHQ) by craft—Java, React, clear delivery."
         />
 
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start max-w-6xl mx-auto">
           <Reveal className="space-y-5">
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-              I&apos;m a Java backend engineer with{" "}
-              <strong className="text-foreground font-semibold">4+ years</strong> across
-              product-led and enterprise delivery in BFSI, FinTech, and SaaS. Today I work on
-              Intellect&apos;s{" "}
+              I&apos;m a <strong className="text-foreground font-semibold">{ROLE_TITLE}</strong> with{" "}
+              <strong className="text-foreground font-semibold">4+ years</strong> across BFSI,
+              FinTech, and SaaS. At Intellect I work on{" "}
               <strong className="text-foreground font-semibold">Payment Service Hub (PSH)</strong>{" "}
-              for <strong className="text-foreground font-semibold">CIBC</strong>—high-volume
-              payments, Spring Boot microservices, Kafka, ActiveMQ, WebSockets, and PostgreSQL.
+              for <strong className="text-foreground font-semibold">CIBC</strong>—Spring Boot
+              microservices, Kafka, ActiveMQ, WebSockets, and PostgreSQL.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed text-pretty">
-              My toolkit spans <strong className="text-foreground">Java 8–17</strong>, the Spring
-              ecosystem, REST, <strong className="text-foreground">Kafka</strong>,{" "}
-              <strong className="text-foreground">Redis</strong>,{" "}
-              <strong className="text-foreground">PostgreSQL</strong>, OAuth2/JWT, containerized
-              CI/CD, and AWS. I care about lower latency, safer releases, and APIs documented well
-              enough for fast onboarding.
+              On the frontend I build with <strong className="text-foreground">React</strong>; on
+              the backend <strong className="text-foreground">Java 8–17</strong>, Spring, REST,{" "}
+              <strong className="text-foreground">Kafka</strong>,{" "}
+              <strong className="text-foreground">Redis</strong>, and{" "}
+              <strong className="text-foreground">PostgreSQL</strong>. I also founded{" "}
+              <a
+                href={ORGMITRA_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent font-semibold underline-offset-4 hover:underline"
+              >
+                OrgMitraHQ
+              </a>
+              —a multi-sector HRMS marketing + product story.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed border-l-4 border-accent pl-4">
               <span className="font-semibold text-foreground">Core strengths: </span>
-              cross-functional collaboration, written communication, end-to-end ownership, and
-              adaptability in Agile/Scrum delivery.
+              full-stack ownership, API clarity, stakeholder alignment, and Agile delivery.
             </p>
 
-            <Button
-              size="lg"
-              variant="outline"
-              asChild
-              className="border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
-            >
-              <a href={RESUME_HREF} download={RESUME_DOWNLOAD_NAME}>
-                <Download className="mr-2 h-5 w-5" />
-                Download resume
-              </a>
-            </Button>
+            <AnimatedResumeButton />
           </Reveal>
 
           <motion.div

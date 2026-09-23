@@ -1,5 +1,6 @@
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
-import { LINKEDIN_HREF, GITHUB_HREF, EMAIL, PHONE_HREF } from "@/lib/site";
+import LnsLogo from "@/components/LnsLogo";
+import { LINKEDIN_HREF, GITHUB_HREF, EMAIL, PHONE_HREF, ROLE_TITLE } from "@/lib/site";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -12,10 +13,11 @@ const Footer = () => {
       />
       <div className="container mx-auto px-4 sm:px-6 max-w-full relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <div>
-            <p className="font-display font-semibold tracking-tight mb-1">Nagendra Lankalapalli</p>
+          <div className="flex flex-col items-center md:items-start gap-2">
+            <LnsLogo />
+            <p className="font-display font-semibold tracking-tight">Nagendra Lankalapalli</p>
             <p className="text-sm text-primary-foreground/70">
-              © {currentYear} · Java Backend Engineer
+              © {currentYear} · {ROLE_TITLE}
             </p>
           </div>
 

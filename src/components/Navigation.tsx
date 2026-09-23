@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Download } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Menu, X } from "lucide-react";
+import AnimatedResumeButton from "@/components/AnimatedResumeButton";
+import LnsLogo from "@/components/LnsLogo";
 import { RESUME_HREF, RESUME_DOWNLOAD_NAME } from "@/lib/site";
 
 const Navigation = () => {
@@ -80,14 +81,10 @@ const Navigation = () => {
               e.preventDefault();
               scrollToSection("#home");
             }}
-            className="flex items-center gap-3 group"
+            className="group"
+            aria-label="LNS home"
           >
-            <div className="w-11 h-11 bg-gradient-accent rounded-xl flex items-center justify-center shadow-md group-hover:shadow-glow transition-all duration-300">
-              <span className="text-white font-display font-bold text-lg">NL</span>
-            </div>
-            <span className="font-display font-semibold text-base text-foreground hidden sm:block tracking-tight">
-              Nagendra Lankalapalli
-            </span>
+            <LnsLogo showWordmark className="group-hover:opacity-90 transition-opacity" />
           </a>
 
           <ul className="hidden lg:flex items-center gap-1">
@@ -112,17 +109,11 @@ const Navigation = () => {
           </ul>
 
           <div className="flex items-center gap-2">
-            <Button
+            <AnimatedResumeButton
               size="sm"
-              variant="outline"
-              asChild
-              className="hidden md:inline-flex border hover:bg-accent hover:text-accent-foreground hover:border-accent"
-            >
-              <a href={RESUME_HREF} download={RESUME_DOWNLOAD_NAME}>
-                <Download className="mr-1.5 h-4 w-4" />
-                Resume
-              </a>
-            </Button>
+              label="Resume"
+              className="hidden md:inline-flex min-h-9 h-9 px-3 text-sm"
+            />
 
             <button
               type="button"
@@ -167,7 +158,6 @@ const Navigation = () => {
                   download={RESUME_DOWNLOAD_NAME}
                   className="flex items-center justify-center gap-2 min-h-11 px-4 py-3 rounded-lg text-base font-medium bg-gradient-accent text-accent-foreground"
                 >
-                  <Download size={18} />
                   Download resume
                 </a>
               </li>

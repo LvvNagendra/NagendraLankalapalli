@@ -11,13 +11,17 @@ npm install
 npm run dev
 ```
 
-## Update resume (always ships with deploy)
+## Update resume & profile photo (always ships with deploy)
 
-1. Replace the file **`public/resume.pdf`** with your latest PDF (keep the same filename).
-2. Commit and push to `main`.
-3. GitHub Actions builds and deploys automatically. Download links use a build id so browsers fetch the new PDF.
+Replace these files (keep the same names), then commit and push to `main`:
 
-Optional: you can also keep older copies under other names in `public/`, but the site only links to `resume.pdf`.
+| File | Purpose |
+|------|---------|
+| `public/resume.pdf` | Resume download |
+| `public/profile.jpg` | Hero / about photo |
+| `public/lns-logo.png` | Optional raster logo asset |
+
+Builds add a cache-bust query so browsers fetch the new files after each deploy.
 
 ## Deploy
 

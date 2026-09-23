@@ -1,11 +1,10 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Download } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin, Github } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import { staggerContainer, staggerItem } from "@/components/Reveal";
+import AnimatedResumeButton from "@/components/AnimatedResumeButton";
 import {
-  RESUME_HREF,
-  RESUME_DOWNLOAD_NAME,
   LINKEDIN_HREF,
   GITHUB_HREF,
   EMAIL,
@@ -131,17 +130,7 @@ const Contact = () => {
                   Email me
                 </a>
               </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="w-full sm:w-auto min-h-11 touch-manipulation border-2 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-all duration-300"
-                asChild
-              >
-                <a href={RESUME_HREF} download={RESUME_DOWNLOAD_NAME}>
-                  <Download className="mr-2 h-5 w-5" />
-                  Download resume
-                </a>
-              </Button>
+              <AnimatedResumeButton className="w-full sm:w-auto" />
             </div>
           </div>
         </div>
