@@ -1,59 +1,92 @@
+import { motion } from "framer-motion";
+import SectionHeading from "@/components/SectionHeading";
+import { staggerContainer, staggerItem } from "@/components/Reveal";
+
+const skillCategories = [
+  {
+    title: "Languages & core",
+    skills: ["Java (8–17)", "J2EE", "SQL", "OOP", "Design patterns"],
+  },
+  {
+    title: "Frameworks",
+    skills: ["Spring Boot", "Spring MVC", "Spring Security", "Spring Cloud", "Hibernate/JPA"],
+  },
+  {
+    title: "Architecture & messaging",
+    skills: ["Microservices", "REST", "Event-driven design", "WebSockets", "Apache Kafka", "ActiveMQ"],
+  },
+  {
+    title: "Data",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Query tuning", "Read replicas"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["AWS (EC2, RDS, S3)", "Docker", "CI/CD", "Maven", "Git", "GitHub", "Tomcat", "NGINX"],
+  },
+  {
+    title: "Security, APIs & practice",
+    skills: [
+      "OAuth2",
+      "JWT",
+      "SSL/TLS",
+      "Keycloak (SSO)",
+      "Swagger/OpenAPI",
+      "Payment gateways",
+      "Agile/Scrum",
+      "SDLC",
+      "Log4j2",
+    ],
+  },
+];
+
 const Skills = () => {
-  const skillCategories = [
-    {
-      title: "Languages & core",
-      skills: ["Java (8–17)", "J2EE", "SQL", "OOP", "Design patterns"],
-    },
-    {
-      title: "Frameworks",
-      skills: ["Spring Boot", "Spring MVC", "Spring Security", "Spring Cloud", "Hibernate/JPA"],
-    },
-    {
-      title: "Architecture & messaging",
-      skills: ["Microservices", "REST", "Event-driven design", "WebSockets", "Apache Kafka", "ActiveMQ"],
-    },
-    {
-      title: "Data",
-      skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Query tuning", "Read replicas"],
-    },
-    {
-      title: "Cloud & DevOps",
-      skills: ["AWS (EC2, RDS, S3)", "Docker", "CI/CD", "Maven", "Git", "GitHub", "Tomcat", "NGINX"],
-    },
-    {
-      title: "Security, APIs & practice",
-      skills: ["OAuth2", "JWT", "SSL/TLS", "Keycloak (SSO)", "Swagger/OpenAPI", "Payment gateways", "Agile/Scrum", "SDLC", "Log4j2"],
-    },
-  ];
-
   return (
-    <section id="skills" className="py-16 sm:py-20 md:py-32 overflow-x-clip">
-      <div className="container mx-auto px-4 sm:px-6 max-w-full">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Technical skills</h2>
-          <p className="text-muted-foreground text-lg">Aligned with my resume</p>
-        </div>
+    <section id="skills" className="py-16 sm:py-20 md:py-28 overflow-x-clip relative">
+      <div
+        aria-hidden
+        className="absolute right-[-8%] bottom-0 h-64 w-64 rounded-full bg-[hsl(200_80%_50%/0.1)] blur-3xl -z-10"
+      />
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {skillCategories.map((category, index) => (
-            <div
-              key={index}
-              className="bg-card p-6 md:p-7 rounded-2xl shadow-lg border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+        <SectionHeading
+          eyebrow="Capabilities"
+          title="Technical skills"
+          subtitle="Aligned with production work across payments, SaaS, and IoT backends."
+        />
+
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-8%" }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-6xl mx-auto"
+        >
+          {skillCategories.map((category) => (
+            <motion.div
+              key={category.title}
+              variants={staggerItem}
+              className="group relative overflow-hidden bg-card p-6 md:p-7 rounded-2xl shadow-md border border-border hover:shadow-lg hover:border-accent/30 transition-all duration-300"
             >
-              <h3 className="text-lg font-bold mb-4 text-accent">{category.title}</h3>
+              <div
+                aria-hidden
+                className="absolute top-0 left-0 h-full w-1 bg-gradient-accent opacity-70 group-hover:opacity-100 transition-opacity"
+              />
+              <h3 className="font-display text-lg font-bold mb-4 text-foreground tracking-tight">
+                {category.title}
+              </h3>
               <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, idx) => (
+                {category.skills.map((skill) => (
                   <span
-                    key={idx}
+                    key={skill}
                     className="px-3 py-1.5 bg-secondary text-foreground text-xs font-medium rounded-lg hover:bg-accent hover:text-accent-foreground transition-colors cursor-default"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

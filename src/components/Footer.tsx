@@ -1,48 +1,56 @@
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
+import { LINKEDIN_HREF, GITHUB_HREF, EMAIL, PHONE_HREF } from "@/lib/site";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground py-8 pb-[max(2rem,env(safe-area-inset-bottom,0px))]">
-      <div className="container mx-auto px-4 sm:px-6 max-w-full">
+    <footer className="bg-gradient-primary text-primary-foreground py-10 pb-[max(2.5rem,env(safe-area-inset-bottom,0px))] relative overflow-hidden">
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,hsl(174_72%_36%/0.2),transparent_55%)]"
+      />
+      <div className="container mx-auto px-4 sm:px-6 max-w-full relative">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-          <p className="text-sm text-balance max-w-prose">
-            © {currentYear} Nagendra Lankalapalli. All rights reserved.
-          </p>
+          <div>
+            <p className="font-display font-semibold tracking-tight mb-1">Nagendra Lankalapalli</p>
+            <p className="text-sm text-primary-foreground/70">
+              © {currentYear} · Java Backend Engineer
+            </p>
+          </div>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <a
-              href="https://www.linkedin.com/in/nagendra-lankalapalli-6a7457236/"
+              href={LINKEDIN_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-h-11 min-w-11 rounded-lg bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 touch-manipulation"
+              className="min-h-11 min-w-11 rounded-xl bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-105 touch-manipulation"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={18} />
             </a>
             <a
-              href="https://github.com/LvvNagendra"
+              href={GITHUB_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="min-h-11 min-w-11 rounded-lg bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 touch-manipulation"
+              className="min-h-11 min-w-11 rounded-xl bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-105 touch-manipulation"
               aria-label="GitHub"
             >
-              <Github size={20} />
+              <Github size={18} />
             </a>
             <a
-              href="mailto:lvvnagendra99@gmail.com"
-              className="min-h-11 min-w-11 rounded-lg bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 touch-manipulation"
+              href={`mailto:${EMAIL}`}
+              className="min-h-11 min-w-11 rounded-xl bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-105 touch-manipulation"
               aria-label="Email"
             >
-              <Mail size={20} />
+              <Mail size={18} />
             </a>
             <a
-              href="tel:+918897590280"
-              className="min-h-11 min-w-11 rounded-lg bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-110 touch-manipulation"
+              href={PHONE_HREF}
+              className="min-h-11 min-w-11 rounded-xl bg-primary-foreground/10 hover:bg-accent flex items-center justify-center transition-all duration-300 hover:scale-105 touch-manipulation"
               aria-label="Phone"
             >
-              <Phone size={20} />
+              <Phone size={18} />
             </a>
           </div>
         </div>

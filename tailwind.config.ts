@@ -14,7 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
+        sans: ['"Source Sans 3"', "system-ui", "sans-serif"],
+        display: ['"Space Grotesk"', "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -91,9 +92,21 @@ export default {
           "0%": { opacity: "0", transform: "translateX(30px)" },
           "100%": { opacity: "1", transform: "translateX(0)" },
         },
-        "gradient-shift": {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
+        float: {
+          "0%, 100%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "0.55", transform: "scale(1)" },
+          "50%": { opacity: "0.9", transform: "scale(1.05)" },
+        },
+        "spin-slow": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
+        "draw-line": {
+          "0%": { transform: "scaleY(0)", transformOrigin: "top" },
+          "100%": { transform: "scaleY(1)", transformOrigin: "top" },
         },
       },
       animation: {
@@ -103,7 +116,10 @@ export default {
         "fade-in-up": "fade-in-up 0.8s ease-out",
         "scale-in": "scale-in 0.5s ease-out",
         "slide-in-right": "slide-in-right 0.6s ease-out",
-        "gradient-shift": "gradient-shift 3s ease infinite",
+        float: "float 6s ease-in-out infinite",
+        "pulse-soft": "pulse-soft 4s ease-in-out infinite",
+        "spin-slow": "spin-slow 28s linear infinite",
+        "draw-line": "draw-line 1.2s ease-out forwards",
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
@@ -111,11 +127,11 @@ export default {
         "gradient-subtle": "var(--gradient-subtle)",
       },
       boxShadow: {
-        "sm": "var(--shadow-sm)",
-        "md": "var(--shadow-md)",
-        "lg": "var(--shadow-lg)",
-        "xl": "var(--shadow-xl)",
-        "glow": "var(--shadow-glow)",
+        sm: "var(--shadow-sm)",
+        md: "var(--shadow-md)",
+        lg: "var(--shadow-lg)",
+        xl: "var(--shadow-xl)",
+        glow: "var(--shadow-glow)",
       },
     },
   },
